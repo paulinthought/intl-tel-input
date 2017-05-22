@@ -118,8 +118,8 @@
             return [ this.autoCountryDeferred, this.utilsScriptDeferred ];
         },
         /********************
-   *  PRIVATE METHODS
-   ********************/
+     *  PRIVATE METHODS
+     ********************/
         // prepare all of the country data, including onlyCountries, excludeCountries and preferredCountries options
         _processCountryData: function() {
             // process onlyCountries or excludeCountries array if present
@@ -898,8 +898,8 @@
             this.telInput.trigger("countrychange", this.selectedCountryData);
         },
         /**************************
-   *  SECRET PUBLIC METHODS
-   **************************/
+     *  SECRET PUBLIC METHODS
+     **************************/
         // this is called when the geoip call returns
         handleAutoCountry: function() {
             if (this.options.initialCountry === "auto") {
@@ -925,8 +925,8 @@
             this.utilsScriptDeferred.resolve();
         },
         /********************
-   *  PUBLIC METHODS
-   ********************/
+     *  PUBLIC METHODS
+     ********************/
         // remove plugin
         destroy: function() {
             if (this.allowDropdown) {
@@ -984,7 +984,7 @@
         },
         // validate the input val - assumes the global function isValidNumber (from utilsScript)
         isValidNumber: function() {
-            var val = $.trim(this._getFullNumber()), countryCode = this.options.nationalMode ? this.selectedCountryData.iso2 : "";
+            var val = $.trim(this._getFullNumber()), countryCode = this.selectedCountryData.iso2 || "";
             return window.intlTelInputUtils ? intlTelInputUtils.isValidNumber(val, countryCode) : null;
         },
         // update the selected flag, and update the input val accordingly
